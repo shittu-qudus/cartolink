@@ -120,12 +120,12 @@ export default function Home() {
 
   const handleShowAll = (e: React.MouseEvent) => {
     e.preventDefault();
-    // Add your show all logic here
+    
   };
 
   return (
     <div className={`min-h-screen py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8 ${darkMode ? 'bg-gray-900' : 'bg-white'} transition-colors duration-300`}>
-      {/* Dark Mode Toggle Button */}
+    
       <div className="flex justify-end mb-4">
         <button
           onClick={toggleDarkMode}
