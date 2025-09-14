@@ -47,7 +47,7 @@ export default function Home() {
     }
   }, []);
 
-  // Apply dark mode class to document
+
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark');
@@ -124,7 +124,7 @@ export default function Home() {
   };
 
   return (
-    <div className={`min-h-screen py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8 ${darkMode ? 'bg-gray-900' : 'bg-white'} transition-colors duration-300`}>
+    <div className={`min-h-screen py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8 ${darkMode ? 'bg-gray-900' : 'bg-white'} transition-colors duration-300 overflow-hidden` }>
     
       <div className="flex justify-end mb-4">
         <button
@@ -231,7 +231,7 @@ export default function Home() {
           {generates.map((generate) => (
             <div
               key={generate.id}
-              className={`${darkMode ? 'bg-gray-800' : 'bg-white'} p-4 transition-colors duration-300 w-300`}
+              className={`${darkMode ? 'bg-gray-800' : 'bg-white'} p-4 transition-colors duration-300 w-200`}
             >
               <div className="flex items-start">
                 <div className="flex-shrink-0">
@@ -254,18 +254,20 @@ export default function Home() {
                         New
                       </span>
                     )}
+                     <button
+                    className={`w-16 h-8 sm:w-20 sm:h-10 ${darkMode ? 'bg-gray-700 text-gray-200 hover:bg-blue-700' : 'bg-gray-200 text-gray-700 hover:bg-blue-600'} rounded-full hover:text-white transition-colors duration-300 font-medium text-xs sm:text-sm flex-shrink-0`}
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    Open
+                  </button>
                   </div>
          
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                     <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} w-100 text-sm mb-2 sm:mb-0 sm:mr-2 flex-grow transition-colors duration-300`}>
                       {generate.text}
+                      
                     </p>
-                    <button 
-                      className={`w-16 h-8 sm:w-20 sm:h-10 ${darkMode ? 'bg-gray-700 text-gray-200 hover:bg-blue-700' : 'bg-gray-200 text-gray-700 hover:bg-blue-600'} rounded-full hover:text-white transition-colors duration-300 font-medium text-xs sm:text-sm flex-shrink-0`}
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      Open
-                    </button>
+                   
                   </div>
                 </div>
               </div>
